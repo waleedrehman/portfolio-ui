@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import profileImage from '../images/profile3.JPG';
 
 export default class IntroSection extends Component {
   render() {
@@ -9,7 +10,7 @@ export default class IntroSection extends Component {
 				<div class="col-md-1 col-lg-2"></div>
 				<div class="col-md-10 col-lg-8">
 					<div class="intro">
-						<div class="profile-img"><img src="../images/profile3.JPG" alt=""></img></div>
+						<div class="profile-img"><img src={profileImage} alt=""></img></div>
 						<h2><b>Muhammad Waleed ur Rehman</b></h2>
 						<h4 class="font-yellow">Software and Web Developer</h4>
 						<ul class="information margin-tb-30">
