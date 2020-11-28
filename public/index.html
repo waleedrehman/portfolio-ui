@@ -39,5 +39,68 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+   <script>
+	function validateForm(){
+		var validation = true;
+		var name = document.getElementById('contact-name');
+		var email = document.getElementById('email');
+		var subject = document.getElementById('subject');
+		var message = document.getElementById('message');
+		if(name == null || name.value === ""){
+			validation = false;
+			$('#contact-name').addClass('animated shake');
+			$('#lab-name').addClass('animated shake');
+			$('#contact-name').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+				$('#contact-name').removeClass('animated shake');
+				$('#lab-name').removeClass('animated shake');
+			});
+			
+		}
+		if(email == null || email.value === ""){
+			validation = false;
+			$('#email').addClass('animated shake');
+			$('#lab-email').addClass('animated shake');
+			$('#email').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+				$('#email').removeClass('animated shake');
+				$('#lab-email').removeClass('animated shake');
+			});
+		}
+		if(subject == null || subject.value === ""){
+			validation = false;
+			$('#subject').addClass('animated shake');
+			$('#lab-subject').addClass('animated shake');
+			$('#subject').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+				$('#subject').removeClass('animated shake');
+				$('#lab-subject').removeClass('animated shake');
+			});
+			
+		}
+		if(message == null || message.value === ""){
+			validation = false;
+			$('#message').addClass('animated shake');
+			$('#lab-message').addClass('animated shake');
+			$('#message').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+				$('#message').removeClass('animated shake');
+				$('#lab-message').removeClass('animated shake');
+			});
+		}
+		console.log(validation);
+		return validation;
+	}
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90590724-1', 'auto');
+  ga('send', 'pageview');
+
+</script>	
+
+
   </body>
 </html>

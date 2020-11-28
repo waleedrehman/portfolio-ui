@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 export default class AboutSection extends Component {
   render() {
@@ -18,73 +20,55 @@ export default class AboutSection extends Component {
 					<div class="row">
 						<div class="col-sm-6 col-md-6 col-lg-3">
 							<div class="radial-prog-area margin-b-30">
-								<div class="radial-progress" data-prog-percent="1">
-									<div></div>
-									<h6 class="progress-title">HTML5 & CSS3</h6>
-								</div>
+								<CircularProgressbar value={100} text="HTML & CSS3" />
 							</div>
 						</div>
 					
 						<div class="col-sm-6 col-md-6 col-lg-3">
 							<div class="radial-prog-area margin-b-30">
-								<div class="radial-progress" data-prog-percent=".90">
-									<div></div>
-									<h6 class="progress-title">WordPress</h6>
-								</div>
+								<CircularProgressbar value={90} text="Wordpress" />
 							</div>
 						</div>
 						
 						<div class="col-sm-6 col-md-6 col-lg-3">
 							<div class="radial-prog-area margin-b-30">
-								<div class="radial-progress" data-prog-percent=".80">
-									<div></div>
-									<h6 class="progress-title">JAVASCRIPT</h6>
-								</div>
+								<CircularProgressbar value={80} text="JAVASCRIPT" />
 							</div>
 						</div>
 						
 						<div class="col-sm-6 col-md-6 col-lg-3">
 							<div class="radial-prog-area margin-b-50">
-								<div class="radial-progress" data-prog-percent=".70">
-									<div></div>
-									<h6 class="progress-title">JQUERY</h6>
-								</div>
+								<CircularProgressbar value={70} text="JQUERY" />
 							</div>
 						</div>
                         
                         <div class="col-sm-6 col-md-6 col-lg-3">
 							<div class="radial-prog-area margin-b-50">
-								<div class="radial-progress" data-prog-percent=".70">
-									<div></div>
-									<h6 class="progress-title">PHOTOSHOP</h6>
-								</div>
+								<CircularProgressbar value={70} text="PHOTOSHOP" />
 							</div>
 						</div>
                         
                         <div class="col-sm-6 col-md-6 col-lg-3">
 							<div class="radial-prog-area margin-b-50">
-								<div class="radial-progress" data-prog-percent=".70">
-									<div></div>
-									<h6 class="progress-title">ASP.net</h6>
-								</div>
+								<CircularProgressbar value={70} text="ASP.net" />
 							</div>
 						</div>
                         
                         <div class="col-sm-6 col-md-6 col-lg-3">
 							<div class="radial-prog-area margin-b-50">
-								<div class="radial-progress" data-prog-percent=".70">
-									<div></div>
-									<h6 class="progress-title">C#</h6>
-								</div>
+								<CircularProgressbar value={70} text="C#" />
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-md-6 col-lg-3">
+							<div class="radial-prog-area margin-b-50">
+								<CircularProgressbar value={70} text="JAVA" />
 							</div>
 						</div>
                         
                         <div class="col-sm-6 col-md-6 col-lg-3">
 							<div class="radial-prog-area margin-b-50">
-								<div class="radial-progress" data-prog-percent=".60">
-									<div></div>
-									<h6 class="progress-title">PHP</h6>
-								</div>
+								<CircularProgressbar value={60} text="PHP" />
 							</div>
 						</div>
 					
