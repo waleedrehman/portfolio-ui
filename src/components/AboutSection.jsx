@@ -65,13 +65,6 @@ export default class AboutSection extends Component {
 								<CircularProgressbar value={70} text="JAVA" />
 							</div>
 						</div>
-                        
-                        <div class="col-sm-6 col-md-6 col-lg-3">
-							<div class="radial-prog-area margin-b-50">
-								<CircularProgressbar value={60} text="PHP" />
-							</div>
-						</div>
-					
 					</div>
 				</div>
 			</div>
