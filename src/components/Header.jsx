@@ -11,7 +11,7 @@ export default class Header extends Component {
 						<div class="info">
 							<i class="icon ion-ios-location-outline"></i>
 							<div class="right-area">
-								<h5>17 Hudson Close</h5>
+								<h5>19 Hudson Close</h5>
 								<h5>Bolton,BL3 4FP</h5>
 							</div>
 						</div>
