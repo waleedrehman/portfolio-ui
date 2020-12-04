@@ -3,11 +3,11 @@ import React, { Component } from 'react'
 export default class ContactSection extends Component {
   render() {
     return (
-		<section id="contact" class="experience-section section">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-4">
-						<div class="heading">
+		<section id="contact" className="experience-section section">
+			<div className="container">
+				<div className="row">
+					<div className="col-sm-4">
+						<div className="heading">
 							<h3><b>Get In Touch</b></h3>
 							<h6>
 								<b>
@@ -19,28 +19,28 @@ export default class ContactSection extends Component {
 							</h6>
 						</div>
 					</div>
-					<div class="col-sm-8">
-						<div class="experience margin-b-50">
+					<div className="col-sm-8">
+						<div className="experience margin-b-50">
 							<form action="email.php" onSubmit="return validateForm();" method="post" id="contactForm" name="contactForm">
 								<fieldset>
 									<div>
-										<label for="contactName">Name <span class="required">*</span></label>
+										<label htmlFor="contactName">Name <span className="required">*</span></label>
 										<input type="text" defaultValue="" size="35" id="contactName" name="contactName"></input>
 									</div>
 									<div>
-										<label for="contactEmail">Email <span class="required">*</span></label>
+										<label htmlFor="contactEmail">Email <span className="required">*</span></label>
 										<input type="text" defaultValue="" size="35" id="contactEmail" name="contactEmail"></input>
 									</div>
 									<div>
-										<label for="contactSubject">Subject <span class="required">*</span></label>
+										<label htmlFor="contactSubject">Subject <span className="required">*</span></label>
 										<input type="text" defaultValue="" size="35" id="contactSubject" name="contactSubject"></input>
 									</div>
 									<div>
-										<label for="contactMessage">Message <span class="required">*</span></label>
+										<label htmlFor="contactMessage">Message <span className="required">*</span></label>
 										<textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
 									</div>
 									<div>
-										<button type="submit" class="submit">Submit</button>
+										<button type="submit" className="submit">Submit</button>
 										<span id="image-loader">
                         					<img alt="" src="images/loader.gif" />
                      					</span>
@@ -49,7 +49,7 @@ export default class ContactSection extends Component {
 							</form>
 							<div id="message-warning"> Error boy</div>
 							<div id="message-success">
-                  				<i class="fa fa-check"></i>Your message was sent, thank you!<br />
+                  				<i className="fa fa-check"></i>Your message was sent, thank you!<br />
 				   			</div>
 						</div>
 					</div>

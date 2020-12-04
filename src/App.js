@@ -10,16 +10,18 @@ import AboutSection from './components/AboutSection';
 import ExperienceSection from './components/ExperienceSection';
 import EducationSection from './components/EducationSection';
 import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
 
 function App() {
   return (
     [
-      <Header />,
-      <IntroSection />,
-      <AboutSection />,
-      <ExperienceSection />,
-      <EducationSection />,
-      <ContactSection />
+      <Header key="Header" />,
+      <IntroSection key="IntroSection" />,
+      <AboutSection key="AboutSection" />,
+      <ExperienceSection key="ExperienceSection" />,
+      <EducationSection key="EducationSection" />,
+      <ContactSection key="ContactSection" />,
+      <Footer key="Footer" />
     ]
   );
 }
