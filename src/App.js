@@ -1,7 +1,6 @@
 import './App.css';
 import './css/bootstrap.css';
 import './css/ionicons.css';
-import './css/fluidbox.min.css';
 import './css/styles.css';
 import './css/responsive.css';
 import Header from './components/Header';

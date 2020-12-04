@@ -7,33 +7,43 @@ export default class ContactSection extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			fields: {},
-			errors: {}
+			fields: {}
 		}
+	}
+
+	shakeField = function(elementId) {
+		var element = document.getElementById(elementId);
+		element.classList.add('error'); 
+            // remove the class after the animation completes
+        setTimeout(function() {
+			element.classList.remove('error');
+		}, 900);
 	}
 
 	validateForm = function() {
 		let fields = this.state.fields;
-		let errors = {};
 		let validation = true;
 		if(!fields["name"]){
 			validation = false;
-			errors["name"] = "Name is required";
+			this.shakeField("contactName");
+			this.shakeField("labelName");
 		}
 		if(!fields["email"]){
 			validation = false;
-			errors["email"] = "Email is required";
+			this.shakeField("contactEmail");
+			this.shakeField("labelEmail");
 		}
 		if(!fields["subject"]){
 			validation = false;
-			errors["subject"] = "Subject is required";
+			this.shakeField("contactSubject");
+			this.shakeField("labelSubject");
 		}
 		if(!fields["message"]){
 			validation = false;
-			errors["message"] = "Message is required";
+			this.shakeField("contactMessage");
+			this.shakeField("labelMessage");
 		}
 		console.log(validation);
-		this.setState({errors: errors});
 		return validation;
 	}
 
@@ -57,7 +67,7 @@ export default class ContactSection extends Component {
 		}) */
 		}
 		else {
-			alert("validation failed");
+			//alert("validation failed");
 		}
 		
 		console.log("hitting the submit, need to validate and create end point for sending email");
@@ -83,27 +93,23 @@ export default class ContactSection extends Component {
 					</div>
 					<div className="col-sm-8">
 						<div className="experience margin-b-50">
-							<form onSubmit={this.handleSubmit.bind(this)} method="POST" method="post" id="contactForm" name="contactForm">
+							<form onSubmit={this.handleSubmit.bind(this)} method="post" id="contactForm" name="contactForm">
 								<fieldset>
 									<div>
-										<label htmlFor="contactName">Name <span className="required">*</span></label>
-										<input type="text" onChange={this.handleChange.bind(this, "name")} value={this.state.fields["name"]} size="35" id="contactName" name="contactName"></input>
-										<span style={{color: "red"}}>{this.state.errors["name"]}</span>
+										<label id="labelName" htmlFor="contactName">Name <span className="required">*</span></label>
+										<input type="text" onChange={this.handleChange.bind(this, "name")} value={this.state.fields["name"]} id="contactName" name="contactName"></input>
 									</div>
 									<div>
-										<label htmlFor="contactEmail">Email <span className="required">*</span></label>
-										<input type="text" onChange={this.handleChange.bind(this, "email")} value={this.state.fields["email"]} size="35" id="contactEmail" name="contactEmail"></input>
-										<span style={{color: "red"}}>{this.state.errors["email"]}</span>
+										<label id="labelEmail" htmlFor="contactEmail">Email <span className="required">*</span></label>
+										<input type="text" onChange={this.handleChange.bind(this, "email")} value={this.state.fields["email"]} id="contactEmail" name="contactEmail"></input>
 									</div>
 									<div>
-										<label htmlFor="contactSubject">Subject <span className="required">*</span></label>
-										<input type="text" onChange={this.handleChange.bind(this, "subject")} value={this.state.fields["subject"]} size="35" id="contactSubject" name="contactSubject"></input>
-										<span style={{color: "red"}}>{this.state.errors["subject"]}</span>
+										<label id="labelSubject" htmlFor="contactSubject">Subject <span className="required">*</span></label>
+										<input type="text" onChange={this.handleChange.bind(this, "subject")} value={this.state.fields["subject"]} id="contactSubject" name="contactSubject"></input>
 									</div>
 									<div>
-										<label htmlFor="contactMessage">Message <span className="required">*</span></label>
+										<label id="labelMessage" htmlFor="contactMessage">Message <span className="required">*</span></label>
 										<textarea cols="50" rows="15" onChange={this.handleChange.bind(this, "message")} value={this.state.fields["message"]}id="contactMessage" name="contactMessage"></textarea>
-										<span style={{color: "red"}}>{this.state.errors["message"]}</span>
 									</div>
 									<div>
 										<button type="submit" className="submit">Submit</button>

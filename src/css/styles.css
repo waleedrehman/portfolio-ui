@@ -403,3 +403,17 @@ input::-moz-focus-inner {
    left: 18px;
 }
 
+.error {
+    position: relative;
+    animation: shake .1s linear;
+    animation-iteration-count: 3;
+}
+
+.error-color {
+	color: red;
+}
+
+@keyframes shake {
+    0% { left: -5px; }
+    100% { right: -5px; }
+}
