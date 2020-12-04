@@ -52,13 +52,14 @@ export default class ContactSection extends Component {
 		//this.validateForm();
 		if (this.validateForm()) {
 			//submit to end point for emailing
-			axios.get('/email.php', {
+			axios.get('https://waleedrehman.uk/portfolio_email/email.php', {
       			params: {
 					subject: this.state.fields["subject"],
 					name: this.state.fields["name"],
 					email: this.state.fields["email"],
 					message: this.state.fields["message"],
-				}
+				},
+				mode: 'cors'
     		}).then(response => {
 				if (response.status === 200) {
 	  				alert("Message Sent."); 

@@ -1,4 +1,7 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST');
+header("Access-Control-Allow-Headers: X-Requested-With");
 $to      = "waleedrehman@yahoo.co.uk";
 $subject = $_GET["subject"];;
 $from = "admin@waleedrehman.co.uk";
