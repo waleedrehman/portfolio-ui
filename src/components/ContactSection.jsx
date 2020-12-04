@@ -1,6 +1,68 @@
 import React, { Component } from 'react'
+import axios from 'axios';
+import $ from 'jquery';
 
 export default class ContactSection extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			fields: {},
+			errors: {}
+		}
+	}
+
+	validateForm = function() {
+		let fields = this.state.fields;
+		let errors = {};
+		let validation = true;
+		if(!fields["name"]){
+			validation = false;
+			errors["name"] = "Name is required";
+		}
+		if(!fields["email"]){
+			validation = false;
+			errors["email"] = "Email is required";
+		}
+		if(!fields["subject"]){
+			validation = false;
+			errors["subject"] = "Subject is required";
+		}
+		if(!fields["message"]){
+			validation = false;
+			errors["message"] = "Message is required";
+		}
+		console.log(validation);
+		this.setState({errors: errors});
+		return validation;
+	}
+
+	handleSubmit(e){
+		e.preventDefault();
+		//this.validateForm();
+		if (this.validateForm()) {
+			//submit to end point for emailing
+			/*
+		axios({
+		  method: "POST", 
+		  url:"??", 
+		  data:  this.state
+		}).then((response)=>{
+		  if (response.data.status === 'success') {
+			alert("Message Sent."); 
+			this.resetForm()
+		  } else if (response.data.status === 'fail') {
+			alert("Message failed to send.")
+		  }
+		}) */
+		}
+		else {
+			alert("validation failed");
+		}
+		
+		console.log("hitting the submit, need to validate and create end point for sending email");
+	  }
+
   render() {
     return (
 		<section id="contact" className="experience-section section">
@@ -21,23 +83,27 @@ export default class ContactSection extends Component {
 					</div>
 					<div className="col-sm-8">
 						<div className="experience margin-b-50">
-							<form action="email.php" onSubmit="return validateForm();" method="post" id="contactForm" name="contactForm">
+							<form onSubmit={this.handleSubmit.bind(this)} method="POST" method="post" id="contactForm" name="contactForm">
 								<fieldset>
 									<div>
 										<label htmlFor="contactName">Name <span className="required">*</span></label>
-										<input type="text" defaultValue="" size="35" id="contactName" name="contactName"></input>
+										<input type="text" onChange={this.handleChange.bind(this, "name")} value={this.state.fields["name"]} size="35" id="contactName" name="contactName"></input>
+										<span style={{color: "red"}}>{this.state.errors["name"]}</span>
 									</div>
 									<div>
 										<label htmlFor="contactEmail">Email <span className="required">*</span></label>
-										<input type="text" defaultValue="" size="35" id="contactEmail" name="contactEmail"></input>
+										<input type="text" onChange={this.handleChange.bind(this, "email")} value={this.state.fields["email"]} size="35" id="contactEmail" name="contactEmail"></input>
+										<span style={{color: "red"}}>{this.state.errors["email"]}</span>
 									</div>
 									<div>
 										<label htmlFor="contactSubject">Subject <span className="required">*</span></label>
-										<input type="text" defaultValue="" size="35" id="contactSubject" name="contactSubject"></input>
+										<input type="text" onChange={this.handleChange.bind(this, "subject")} value={this.state.fields["subject"]} size="35" id="contactSubject" name="contactSubject"></input>
+										<span style={{color: "red"}}>{this.state.errors["subject"]}</span>
 									</div>
 									<div>
 										<label htmlFor="contactMessage">Message <span className="required">*</span></label>
-										<textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+										<textarea cols="50" rows="15" onChange={this.handleChange.bind(this, "message")} value={this.state.fields["message"]}id="contactMessage" name="contactMessage"></textarea>
+										<span style={{color: "red"}}>{this.state.errors["message"]}</span>
 									</div>
 									<div>
 										<button type="submit" className="submit">Submit</button>
@@ -47,10 +113,6 @@ export default class ContactSection extends Component {
 									</div>
 								</fieldset>
 							</form>
-							<div id="message-warning"> Error boy</div>
-							<div id="message-success">
-                  				<i className="fa fa-check"></i>Your message was sent, thank you!<br />
-				   			</div>
 						</div>
 					</div>
 				</div>
@@ -58,4 +120,11 @@ export default class ContactSection extends Component {
 		</section>
     )
   }
+
+  handleChange(field, e){         
+	let fields = this.state.fields;
+	fields[field] = e.target.value;        
+	this.setState({fields});
+  }
+
 }
