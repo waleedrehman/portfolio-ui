@@ -52,25 +52,21 @@ export default class ContactSection extends Component {
 		//this.validateForm();
 		if (this.validateForm()) {
 			//submit to end point for emailing
-			/*
-		axios({
-		  method: "POST", 
-		  url:"??", 
-		  data:  this.state
-		}).then((response)=>{
-		  if (response.data.status === 'success') {
-			alert("Message Sent."); 
-			this.resetForm()
-		  } else if (response.data.status === 'fail') {
-			alert("Message failed to send.")
-		  }
-		}) */
+			axios.get('/email.php', {
+      			params: {
+					subject: this.state.fields["subject"],
+					name: this.state.fields["name"],
+					email: this.state.fields["email"],
+					message: this.state.fields["message"],
+				}
+    		}).then(response => {
+				if (response.status === 200) {
+	  				alert("Message Sent."); 
+				} else {
+	  				alert("Message failed to send.")
+				}
+  			})
 		}
-		else {
-			//alert("validation failed");
-		}
-		
-		console.log("hitting the submit, need to validate and create end point for sending email");
 	  }
 
   render() {

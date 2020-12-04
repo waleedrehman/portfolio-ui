@@ -409,10 +409,6 @@ input::-moz-focus-inner {
     animation-iteration-count: 3;
 }
 
-.error-color {
-	color: red;
-}
-
 @keyframes shake {
     0% { left: -5px; }
     100% { right: -5px; }
