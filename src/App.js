@@ -11,9 +11,6 @@ import ExperienceSection from './components/ExperienceSection';
 import EducationSection from './components/EducationSection';
 import ContactSection from './components/ContactSection';
 
-
-
-
 function App() {
   return (
     [
