@@ -61,6 +61,7 @@ export default class ContactSection extends Component {
 				},
 				mode: 'cors'
     		}).then(response => {
+	  			console.log(response);
 				if (response.status === 200) {
 	  				alert("Message Sent."); 
 				} else {
