@@ -52,7 +52,7 @@ export default class ContactSection extends Component {
 		//this.validateForm();
 		if (this.validateForm()) {
 			//submit to end point for emailing
-			axios.get('https://waleedrehman.uk/portfolio_email/email.php', {
+			axios.get('https://portfolio-backend.waleedrehman.co.uk/sendEmail', {
       			params: {
 					subject: this.state.fields["subject"],
 					name: this.state.fields["name"],
