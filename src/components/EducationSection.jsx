@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import ReactHtmlParser from 'react-html-parser';
 
 export default class EducationSection extends Component {
 	constructor() {
@@ -21,7 +22,7 @@ export default class EducationSection extends Component {
 				<h4><b>{education.courseTitle}</b></h4>
 				<h5 className="font-yellow"><b>{education.institution}</b></h5>
 				<h6 className="font-lite-black margin-t-10">{education.dateFromTo}</h6>
-				<p className="margin-tb-30">{education.description}</p>
+				<p className="margin-tb-30">{ReactHtmlParser(education.description)}</p>
 			</div>
 		);
 	});
