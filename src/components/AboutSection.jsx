@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import ProgressProvider from './Utilities/ProgressProvider';
 
 export default class AboutSection extends Component {
   render() {
@@ -20,49 +21,65 @@ export default class AboutSection extends Component {
 					<div className="row">
 						<div className="col-sm-6 col-md-6 col-lg-3">
 							<div className="radial-prog-area margin-b-30">
-								<CircularProgressbar value={100} text="HTML & CSS3" />
+								<ProgressProvider valueStart={0} valueEnd={100}>
+									{(value) => <CircularProgressbar text="HTML & CSS3" value={value} />}
+								</ProgressProvider>
 							</div>
 						</div>
 					
 						<div className="col-sm-6 col-md-6 col-lg-3">
 							<div className="radial-prog-area margin-b-30">
-								<CircularProgressbar value={90} text="Wordpress" />
+								<ProgressProvider valueStart={0} valueEnd={90}>
+									{(value) => <CircularProgressbar text="Wordpress" value={value} />}
+								</ProgressProvider>
 							</div>
 						</div>
 						
 						<div className="col-sm-6 col-md-6 col-lg-3">
 							<div className="radial-prog-area margin-b-30">
-								<CircularProgressbar value={80} text="JAVASCRIPT" />
+								<ProgressProvider valueStart={0} valueEnd={80}>
+									{(value) => <CircularProgressbar text="JAVASCRIPT" value={value} />}
+								</ProgressProvider>
 							</div>
 						</div>
 						
 						<div className="col-sm-6 col-md-6 col-lg-3">
 							<div className="radial-prog-area margin-b-50">
-								<CircularProgressbar value={70} text="JQUERY" />
+								<ProgressProvider valueStart={0} valueEnd={70}>
+									{(value) => <CircularProgressbar text="JQUERY" value={value} />}
+								</ProgressProvider>
 							</div>
 						</div>
                         
                         <div className="col-sm-6 col-md-6 col-lg-3">
 							<div className="radial-prog-area margin-b-50">
-								<CircularProgressbar value={70} text="PHOTOSHOP" />
+								<ProgressProvider valueStart={0} valueEnd={70}>
+									{(value) => <CircularProgressbar text="PHOTOSHOP" value={value} />}
+								</ProgressProvider>
 							</div>
 						</div>
                         
                         <div className="col-sm-6 col-md-6 col-lg-3">
 							<div className="radial-prog-area margin-b-50">
-								<CircularProgressbar value={70} text="ASP.net" />
+								<ProgressProvider valueStart={0} valueEnd={70}>
+									{(value) => <CircularProgressbar text="ASP.net" value={value} />}
+								</ProgressProvider>
 							</div>
 						</div>
                         
                         <div className="col-sm-6 col-md-6 col-lg-3">
 							<div className="radial-prog-area margin-b-50">
-								<CircularProgressbar value={70} text="C#" />
+								<ProgressProvider valueStart={0} valueEnd={70}>
+									{(value) => <CircularProgressbar text="C#" value={value} />}
+								</ProgressProvider>
 							</div>
 						</div>
 
 						<div className="col-sm-6 col-md-6 col-lg-3">
 							<div className="radial-prog-area margin-b-50">
-								<CircularProgressbar value={70} text="JAVA" />
+								<ProgressProvider valueStart={0} valueEnd={70}>
+									{(value) => <CircularProgressbar text="JAVA" value={value} />}
+								</ProgressProvider>
 							</div>
 						</div>
 					</div>
