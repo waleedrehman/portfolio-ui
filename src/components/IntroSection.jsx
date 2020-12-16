@@ -24,6 +24,7 @@ export default class IntroSection extends Component {
 							<li><a href="mailto:hello@waleedrehman.co.uk"><i className="ion-email"></i></a></li>
 							<li><a href="http://waleedrehman.co.uk"><i className="ion-ios-world"></i></a></li>
 							<li><a target="_blank" rel="noreferrer" href="https://about.me/waleedrehman"><i className="ion-person"></i></a></li>
+							<li><a target="_blank" rel="noreferrer" href="https://github.com/waleedrehman/"><i className="ion-social-github"></i></a></li>
 						</ul>
 					</div>
 				</div>
