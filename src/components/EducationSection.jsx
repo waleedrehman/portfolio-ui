@@ -11,7 +11,7 @@ export default class EducationSection extends Component {
 	}
 
 	componentDidMount() {
-		axios.get('https://portfolio-backend.waleedrehman.co.uk/getEducation/all')
+		axios.get('https://portfolio-backend.waleedrehman.co.uk/getEducation/')
 		.then(responce => this.setState({result: responce.data}))
 	}
 

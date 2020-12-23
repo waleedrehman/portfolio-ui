@@ -12,7 +12,7 @@ export default class ExperienceSection extends Component {
 	}
 
 	componentDidMount() {
-		axios.get('https://portfolio-backend.waleedrehman.co.uk/getEmployment/all')
+		axios.get('https://portfolio-backend.waleedrehman.co.uk/getEmployment/')
 		.then(response => this.setState({result: response.data}))
 	}
   render() {
