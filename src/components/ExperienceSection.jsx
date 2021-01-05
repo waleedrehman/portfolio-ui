@@ -22,7 +22,7 @@ export default class ExperienceSection extends Component {
 				<h4><b>{employment.jobTitle}</b></h4>
 				<h5 className="font-yellow"><b>{employment.company}</b></h5>
 				<h6 className="margin-t-10">{employment.dateFromTo}</h6>
-				<p className="font-semi-white margin-tb-30">{ ReactHtmlParser(employment.description)} </p>
+				<div className="font-semi-white margin-tb-30">{ ReactHtmlParser(employment.description)} </div>
 			</div>
 	  	);
   	});  

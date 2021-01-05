@@ -48,7 +48,7 @@ export default class AboutSection extends Component {
   render() {
 	const skillsList = this.state.skills.map(function (skill){
 		return (
-			<div className="col-sm-6 col-md-6 col-lg-3">
+			<div key={skill.Name} className="col-sm-6 col-md-6 col-lg-3">
 				<div className="radial-prog-area margin-b-30">
 					<TrackVisibility partialVisibility once>
             			{({ isVisible }) => isVisible && 
