@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import $ from 'jquery';
+import loaderImage from '../images/loader.gif';
 
 export default class ContactSection extends Component {
 
@@ -112,7 +112,7 @@ export default class ContactSection extends Component {
 									<div>
 										<button type="submit" className="submit">Submit</button>
 										<span id="image-loader">
-                        					<img alt="" src="images/loader.gif" />
+                        					<img alt="" src={loaderImage} />
                      					</span>
 									</div>
 								</fieldset>
