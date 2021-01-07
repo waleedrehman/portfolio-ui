@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { CircularProgressbar } from 'react-circular-progressbar';
+import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import ProgressProvider from './Utilities/ProgressProvider';
+import AnimatedProgressProvider from './Utilities/AnimatedProgressProvider';
 import TrackVisibility from 'react-on-screen';
+import { easeQuadInOut } from 'd3-ease';
 
 export default class AboutSection extends Component {
 
@@ -52,9 +53,21 @@ export default class AboutSection extends Component {
 				<div className="radial-prog-area margin-b-30">
 					<TrackVisibility partialVisibility once>
             			{({ isVisible }) => isVisible && 
-							<ProgressProvider valueStart={0} valueEnd={skill.Value}>
-								{(value) => <CircularProgressbar text={skill.Name} value={value} />}
-							</ProgressProvider>}
+							<AnimatedProgressProvider valueStart={0} valueEnd={skill.Value} duration={1.4} easingFunction={easeQuadInOut} >
+								{(value) => {
+    								const roundedValue = Math.round(value);
+    								return (
+										<CircularProgressbarWithChildren value={value} >
+											<div className="CircularProgressWithChildren">
+    											<stong>{skill.Name}</stong>
+  											</div>
+										  	<div className="CircularProgressWithChildren">
+											  <stong>{roundedValue + '%'}</stong>
+											</div>
+										</CircularProgressbarWithChildren>
+    								);
+  								}}
+							</AnimatedProgressProvider>}
         			</TrackVisibility>
 				</div>
 			</div>
