@@ -53,7 +53,7 @@ export default class AboutSection extends Component {
 				<div className="radial-prog-area margin-b-30">
 					<TrackVisibility partialVisibility once>
             			{({ isVisible }) => isVisible && 
-							<AnimatedProgressProvider valueStart={0} valueEnd={skill.Value} duration={1.4} easingFunction={easeQuadInOut} >
+							<AnimatedProgressProvider valueStart={0} valueEnd={skill.Value} duration={1.2} easingFunction={easeQuadInOut} >
 								{(value) => {
     								const roundedValue = Math.round(value);
     								return (
