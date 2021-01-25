@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import profileImage from '../images/profile3.JPG';
+import profileImage from '../images/Waleed Memoji Laptop White.fw.png';
 
 export default class IntroSection extends Component {
   render() {
