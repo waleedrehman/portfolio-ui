@@ -17,7 +17,7 @@ export default class IntroSection extends Component {
 							<li><b>BASED IN : </b>Bolton</li>
                             <li><b>BORN : </b>19 January 1994</li>
 							<li><b>EMAIL : </b>hello@waleedrehman.co.uk</li>
-							<li><b>MARITAL STATUS : </b>Engaged</li>
+							<li><b>MARITAL STATUS : </b>Married</li>
 						</ul>
 						<ul className="social-icons">
 							<li><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/muhammad-waleed-ur-rehman/"><i className="ion-social-linkedin"></i></a></li>
